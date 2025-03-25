@@ -8,6 +8,7 @@ const reviewSchema = new mongoose.Schema({
      createdAt: { type: Date, default: Date.now },
 }, { timestamps: true });
 
+// drink
 const drinkSchema = new mongoose.Schema({
      name: { type: String, required: true },
      type: { type: String, enum: ["Cocktail", "Mocktail", "Other"], required: true },
