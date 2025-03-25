@@ -5,11 +5,11 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 
-import session from 'express-session'; // for auth routes
+// import session from 'express-session'; // for auth routes
 
 // Routers
-import { drinksRouter } from './routes/drinks.js';
-import { pairingsRouter } from './routes/pairings.js';
+import { drinkRouter } from './routes/drinks.js';
+import { pairingRouter } from './routes/pairings.js';
 import { authenticationRouter } from './routes/authentication.js'; // The authenticationRouter is a router that handles user authentication routes.
 
 dotenv.config();
@@ -37,11 +37,11 @@ app.use(morgan("dev"));
 app.use(helmet());
 app.use(cors());
 
-app.use(session({ // for auth
-     secret: process.env.SESSION_SECRET || "supersecret",
-     resave: false,
-     saveUninitialized: false,
-}))
+// app.use(session({ // for auth
+//      secret: process.env.SESSION_SECRET || "supersecret",
+//      resave: false,
+//      saveUninitialized: false,
+// }))
 
 // Routes
 app.get('/', (req, res) => {
@@ -49,14 +49,14 @@ app.get('/', (req, res) => {
 });
 
 // API Routes
-app.use('/api/drinks', drinksRouter);
-app.use('/api/pairings', pairingsRouter);
+app.use('/api/drinks', drinkRouter);
+app.use('/api/pairings', pairingRouter);
 app.use('/api/auth', authenticationRouter);
 
 // Global Error Handler
-app.use((err, _req, res, next) => {
-     console.error(err);
-     res.status(500).send("Seems like we messed up somewhere...");
+app.use((error, _req, res, next) => {
+     console.error(error.stack);
+     res.status(error.status || 500).json({ error: error.message || "Seems like we messed up somewhere..."}); // (maybe 400 ?)
    });
 
 

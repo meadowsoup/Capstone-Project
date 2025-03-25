@@ -1,6 +1,6 @@
 import express from 'express';
-import { Pairing } from '../models/Pairing.js';
-import { Drink } from '../models/Drink.js';
+import Pairing from '../models/Pairing.js';
+import Drink from '../models/Drink.js';
 
 
 export const pairingRouter = express.Router();
