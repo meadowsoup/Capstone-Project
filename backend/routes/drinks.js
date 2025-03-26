@@ -51,13 +51,13 @@ drinkRouter.get('/search', async (req, res) => {
 drinkRouter.post('/', async (req, res) => {
      console.log("Incoming request body:", req.body);
      try {
-          const { name, type, inspiredBy, ingredients, recipe, imageURL } = req.body;
+          const { name, type, inspiredBy, title, ingredients, recipe, imageURL } = req.body;
 
-          if (!name || !type || !inspiredBy || !ingredients || !recipe || !imageURL) {
+          if (!name || !type || !inspiredBy || !title || !ingredients || !recipe || !imageURL) {
                return res.status(400).json({ error: "Missing required fields" });
           }
 
-          const newDrink = new Drink({ name, type, inspiredBy, ingredients, recipe, imageURL });
+          const newDrink = new Drink({ name, type, inspiredBy, title, ingredients, recipe, imageURL });
           const savedDrink = await newDrink.save();
           res.status(201).json(savedDrink); // return the saved drink
      } catch (error) {

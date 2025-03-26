@@ -16,6 +16,7 @@ const drinkSchema = new mongoose.Schema({
      recipe: { type: String, required: true },
      image: { type: String, },
      inspiredBy: { type: String, enum: ["Anime", "Video Game", "Original"], required: true }, // update: inspired by anime, video game, or original
+     title: { type: String, required: true }, // Added field for the anime/video game name
      reviews: [reviewSchema], // update: add reviews (array of reviewSchema(embedded sub-document))
      rating: { type: Number, default: 0 },
 }, { timestamps: true });
