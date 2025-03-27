@@ -1,0 +1,22 @@
+.navbar {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     background: rgba(0, 0, 0, 0.9);
+     padding: 15px;
+     font-size: 1.2rem;
+     border-bottom: 3px solid #ff0040;
+   }
+   
+   .navbar a {
+     text-decoration: none;
+     color: #ff7300;
+     font-family: 'Press Start 2P', sans-serif;
+     transition: 0.3s;
+   }
+   
+   .navbar a:hover {
+     color: #ff0040;
+     text-shadow: 0 0 10px #ff0040;
+   }
+   

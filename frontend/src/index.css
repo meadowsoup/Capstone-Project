@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,42 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  font-family: 'Press Start 2P', sans-serif;
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(45deg, #ff0040, #ff7300);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #ff0040;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #ff7300, #ff0040);
+  box-shadow: 0 0 20px #ff7300;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(-45deg, #ff0040, #ff7300, #0f0c29, #302b63);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 10s infinite;
 }

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { getDrinks } from "../api";
 import DrinkCard from "../components/DrinkCard";
+import "./Drinks.css";
 
 
 const Drinks = () => {
@@ -14,6 +15,7 @@ const Drinks = () => {
     const fetchDrinks = async () => {
      try {
       const drinks = await getDrinks();
+      console.log("Drinks:", drinks);
       setDrinks(drinks);
     } catch (error) {
       console.error("Error fetching drinks:", error);

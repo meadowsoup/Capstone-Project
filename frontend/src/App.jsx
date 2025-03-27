@@ -6,6 +6,7 @@ import Drinks from './pages/Drinks'
 import AddDrink from './pages/AddDrink'
 import About from './pages/About'
 import './App.css'
+import DrinkDetails from './pages/DrinkDetails'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/drinks' element={<Drinks />} />
         <Route path='/add-drink' element={<AddDrink />} />
         <Route path='/about' element={<About />} />
+        <Route path='/drinks/:id' element={<DrinkDetails />} />
       </Routes>
     </Router>
   );

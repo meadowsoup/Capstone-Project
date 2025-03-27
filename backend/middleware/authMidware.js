@@ -4,9 +4,25 @@
 //todo - Create a new file in the middleware folder and add the following code:
 
 
+// export const requireAuth = (req, res, next) => {
+//      if (!req.session.user) {
+//           return res.status(401).json({ error: "Unauthorized" });
+//      }
+//      next ();
+// };
+
 export const requireAuth = (req, res, next) => {
-     if (!req.session.user) {
-          return res.status(401).json({ error: "Unauthorized" });
+     if (!req.session || !req.session.user) {
+         return res.status(401).json({ error: "Authentication required" });
      }
-     next ();
-};
+     next();
+ };
+ 
+ // Admin check middleware
+ export const requireAdmin = (req, res, next) => {
+     if (req.session.user.role !== 'admin') {
+         return res.status(403).json({ error: "Access denied" });
+     }
+     next();
+ };
+ 

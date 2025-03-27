@@ -2,8 +2,8 @@
 
 
 export const validateDrink = (req, res, next) => {
-     const { name, type, inspiration, ingredients, instructions } = req.body;
-     if (!name || !type || !inspiration || !ingredients || !instructions) {
+     const { name, type, inspiredBy, ingredients, recipe } = req.body;
+     if (!name || !type || !inspiredBy || !ingredients || !recipe) {
           return res.status(400).json({ error: "Missing required fields" });
      }
      next();

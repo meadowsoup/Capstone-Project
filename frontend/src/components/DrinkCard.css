@@ -1,0 +1,14 @@
+.drink-card {
+     background: rgba(255, 255, 255, 0.1);
+     border-radius: 10px;
+     padding: 15px;
+     margin: 10px;
+     transition: 0.3s;
+     box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+   }
+   
+   .drink-card:hover {
+     box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+     transform: scale(1.05);
+   }
+   

@@ -1,0 +1,19 @@
+.drinks-page {
+     padding: 20px;
+     text-align: center;
+   }
+   
+   .search-filter {
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+     margin-bottom: 20px;
+   }
+   
+   .drinks-list {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 15px;
+   }
+   
