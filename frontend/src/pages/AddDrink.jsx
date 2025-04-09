@@ -49,7 +49,7 @@ const AddDrink = () => {
 
   return (
     <div className="page">
-      <h2>Add a New Drink</h2>
+      <h2>New Drink</h2>
       {errorMessage && <p className="error">{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
         <input
@@ -99,7 +99,7 @@ const AddDrink = () => {
           onChange={handleChange}
         />
         {drink.image && <img src={drink.image} alt="Drink preview" style={{ width: '100px', height: '100px', marginTop: '10px' }} />}
-        <button type="submit">Add Drink</button>
+        <button type="submit">Add Batch</button>
       </form>
     </div>
   );
